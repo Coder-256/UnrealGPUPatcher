@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MachOKit
 
 enum GPUType: CaseIterable, Identifiable {
     case intel, nvidia, other

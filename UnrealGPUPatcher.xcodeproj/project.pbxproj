@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1975D2285D2B3200DACDAF /* MachOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1975D1285D2B3200DACDAF /* MachOKit.framework */; };
+		5D1975D3285D2B3200DACDAF /* MachOKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1975D1285D2B3200DACDAF /* MachOKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D8F3CE8285D0D7400C2024D /* UnrealGPUPatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */; };
 		5D8F3CEA285D0D7400C2024D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CE9285D0D7400C2024D /* ContentView.swift */; };
 		5D8F3CEC285D0D7700C2024D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8F3CEB285D0D7700C2024D /* Assets.xcassets */; };
@@ -15,7 +17,22 @@
 		5D8F3CF9285D16FC00C2024D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF8285D16FC00C2024D /* Log.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D1975D4285D2B3200DACDAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D1975D3285D2B3200DACDAF /* MachOKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5D1975D1285D2B3200DACDAF /* MachOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MachOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE4285D0D7400C2024D /* UnrealGPUPatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnrealGPUPatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrealGPUPatcherApp.swift; sourceTree = "<group>"; };
 		5D8F3CE9285D0D7400C2024D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,17 +48,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1975D2285D2B3200DACDAF /* MachOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D1975D0285D2B3200DACDAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1975D1285D2B3200DACDAF /* MachOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D8F3CDB285D0D7400C2024D = {
 			isa = PBXGroup;
 			children = (
 				5D8F3CE6285D0D7400C2024D /* UnrealGPUPatcher */,
 				5D8F3CE5285D0D7400C2024D /* Products */,
+				5D1975D0285D2B3200DACDAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +112,7 @@
 				5D8F3CE0285D0D7400C2024D /* Sources */,
 				5D8F3CE1285D0D7400C2024D /* Frameworks */,
 				5D8F3CE2285D0D7400C2024D /* Resources */,
+				5D1975D4285D2B3200DACDAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
