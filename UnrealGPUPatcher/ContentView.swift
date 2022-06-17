@@ -44,7 +44,11 @@ struct ContentView: View {
                         }
                         log("Exec URL: \(execURL.absoluteString)")
                         log("Starting patch...")
-                        patch(url: execURL, gpuType: gpuType)
+                        do {
+                            try patch(url: execURL, gpuType: gpuType)
+                        } catch {
+                            log("Patching error: \(error)")
+                        }
                     }
                     return true
                 }
