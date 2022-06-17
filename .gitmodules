@@ -1,0 +1,3 @@
+[submodule "MachO-Kit"]
+	path = MachO-Kit
+	url = https://github.com/DeVaukz/MachO-Kit
