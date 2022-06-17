@@ -11,6 +11,8 @@
 		5D8F3CEA285D0D7400C2024D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CE9285D0D7400C2024D /* ContentView.swift */; };
 		5D8F3CEC285D0D7700C2024D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8F3CEB285D0D7700C2024D /* Assets.xcassets */; };
 		5D8F3CEF285D0D7700C2024D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8F3CEE285D0D7700C2024D /* Preview Assets.xcassets */; };
+		5D8F3CF7285D0DB300C2024D /* Patcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF6285D0DB300C2024D /* Patcher.swift */; };
+		5D8F3CF9285D16FC00C2024D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF8285D16FC00C2024D /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		5D8F3CEB285D0D7700C2024D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D8F3CEE285D0D7700C2024D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D8F3CF0285D0D7700C2024D /* UnrealGPUPatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnrealGPUPatcher.entitlements; sourceTree = "<group>"; };
+		5D8F3CF6285D0DB300C2024D /* Patcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patcher.swift; sourceTree = "<group>"; };
+		5D8F3CF8285D16FC00C2024D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */,
 				5D8F3CE9285D0D7400C2024D /* ContentView.swift */,
+				5D8F3CF8285D16FC00C2024D /* Log.swift */,
+				5D8F3CF6285D0DB300C2024D /* Patcher.swift */,
 				5D8F3CEB285D0D7700C2024D /* Assets.xcassets */,
 				5D8F3CF0285D0D7700C2024D /* UnrealGPUPatcher.entitlements */,
 				5D8F3CED285D0D7700C2024D /* Preview Content */,
@@ -141,6 +147,8 @@
 			files = (
 				5D8F3CEA285D0D7400C2024D /* ContentView.swift in Sources */,
 				5D8F3CE8285D0D7400C2024D /* UnrealGPUPatcherApp.swift in Sources */,
+				5D8F3CF9285D16FC00C2024D /* Log.swift in Sources */,
+				5D8F3CF7285D0DB300C2024D /* Patcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
