@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 
 struct ContentView: View {
     @State private var gpuType: GPUType = .intel
     @State private var isTargeted = false
     @State private var isPatching = false
+    @State private var isSuccessful = true
+    @State private var isShowingMark = false
     @ObservedObject var sharedLog = Log.shared
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack {
@@ -21,49 +23,28 @@ struct ContentView: View {
                     Text("Drag an app here to patch!")
                         .padding(.horizontal)
 
-                    Image(systemName: "app.dashed")
-                        .font(.system(size: 160, weight: .thin))
-                        .padding()
-                        .onDrop(of: isPatching ? [] : [.fileURL], isTargeted: $isTargeted) { provider in
-                            isPatching = true
-                            sharedLog.text = ""
-                            provider[0].loadItem(forTypeIdentifier: UTType.url.identifier) { data, error in
-                                if let error = error {
-                                    log("Drop error: \(error)")
+                    ZStack {
+                        Image(systemName: "app.dashed")
+                            .font(.system(size: 160, weight: .thin))
+                            .padding()
+                            .onDrop(of: isPatching ? [] : [.fileURL], isTargeted: $isTargeted) { providers in
+                                isShowingMark = false
+                                withAnimation { isPatching = true }
+                                sharedLog.text = ""
+                                patch(providers: providers, gpuType: gpuType) { success in
                                     isPatching = false
-                                    return
+                                    isSuccessful = success
+                                    withAnimation { isShowingMark = true }
                                 }
-                                guard let data = data as? Data,
-                                      let url = URL(dataRepresentation: data, relativeTo: nil) else {
-                                    log("Unable to get URL from drop source")
-                                    isPatching = false
-                                    return
-                                }
-                                log("URL: \(url.absoluteString)")
-                                guard let bundle = Bundle(url: url) else {
-                                    log("Unable to get bundle from URL")
-                                    isPatching = false
-                                    return
-                                }
-                                guard let execURL = bundle.executableURL else {
-                                    log("Unable to get executable from bundle")
-                                    isPatching = false
-                                    return
-                                }
-                                log("Exec URL: \(execURL.absoluteString)")
-                                DispatchQueue.global(qos: .userInitiated).async {
-                                    log("Starting patch...")
-                                    do {
-                                        try patch(url: execURL, gpuType: gpuType)
-                                    } catch {
-                                        log("Patching error: \(error)")
-                                    }
-                                    isPatching = false
-                                }
+                                return true
                             }
-                            return true
-                        }
-                        .background(isTargeted ? Color.gray : Color.clear)
+                            .background(isTargeted ? Color.gray : Color.clear)
+
+                        Image(systemName: isSuccessful ? "checkmark.circle" : "xmark.circle")
+                            .font(.system(size: 100))
+                            .foregroundColor(isSuccessful ? Color.green : Color.red)
+                            .opacity(isShowingMark ? 1 : 0)
+                    }
 
                     Picker("Patched GPU Type", selection: $gpuType) {
                         Text("Intel").tag(GPUType.intel)
@@ -82,6 +63,7 @@ struct ContentView: View {
 
             TextEditor(text: .constant(sharedLog.text))
                 .frame(width: 300, height: 100)
+                .border(colorScheme == .light ? .black : .white, width: 1.0)
         }
         .padding()
         .fixedSize()
