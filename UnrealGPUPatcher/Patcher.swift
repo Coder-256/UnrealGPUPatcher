@@ -10,7 +10,7 @@ import MachOKit
 import UniformTypeIdentifiers
 
 enum GPUType: CaseIterable, Identifiable {
-    case intel, nvidia, other
+    case intel, nvidia, other, undo
     var id: Self { self }
 }
 
@@ -65,6 +65,16 @@ func patch(url execURL: URL, gpuType: GPUType) throws {
     // First, back up!
     let backupURL = execURL.appendingPathExtension("bak")
     log("Backup URL: \(backupURL.absoluteString)")
+    if gpuType == .undo {
+        if FileManager.default.fileExists(atPath: backupURL.path) {
+            try? FileManager.default.removeItem(at: execURL)
+            try FileManager.default.moveItem(at: backupURL, to: execURL)
+            log("Patch removed!")
+        } else {
+            log("No patch was detected.")
+        }
+        return
+    }
     if !FileManager.default.fileExists(atPath: backupURL.path) {
         try FileManager.default.copyItem(at: execURL, to: backupURL)
     }

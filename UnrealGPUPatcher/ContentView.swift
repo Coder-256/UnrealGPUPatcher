@@ -50,6 +50,7 @@ struct ContentView: View {
                         Text("Intel").tag(GPUType.intel)
                         Text("NVIDIA").tag(GPUType.nvidia)
                         Text("Other").tag(GPUType.other)
+                        Text("Remove patch").tag(GPUType.undo)
                     }
                     .pickerStyle(.radioGroup)
                 }
