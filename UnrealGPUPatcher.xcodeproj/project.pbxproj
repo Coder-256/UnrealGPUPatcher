@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0F1FB0285D7A11005460FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F1FAF285D7A11005460FD /* Credits.html */; };
 		5D1975D2285D2B3200DACDAF /* MachOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1975D1285D2B3200DACDAF /* MachOKit.framework */; };
 		5D1975D3285D2B3200DACDAF /* MachOKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1975D1285D2B3200DACDAF /* MachOKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D8F3CE8285D0D7400C2024D /* UnrealGPUPatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D0F1FAF285D7A11005460FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		5D1975D1285D2B3200DACDAF /* MachOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MachOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE4285D0D7400C2024D /* UnrealGPUPatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnrealGPUPatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrealGPUPatcherApp.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				5D8F3CF6285D0DB300C2024D /* Patcher.swift */,
 				5D8F3CEB285D0D7700C2024D /* Assets.xcassets */,
 				5D8F3CF0285D0D7700C2024D /* UnrealGPUPatcher.entitlements */,
+				5D0F1FAF285D7A11005460FD /* Credits.html */,
 				5D8F3CED285D0D7700C2024D /* Preview Content */,
 			);
 			path = UnrealGPUPatcher;
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8F3CEF285D0D7700C2024D /* Preview Assets.xcassets in Resources */,
+				5D0F1FB0285D7A11005460FD /* Credits.html in Resources */,
 				5D8F3CEC285D0D7700C2024D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
