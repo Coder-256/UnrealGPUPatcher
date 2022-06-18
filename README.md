@@ -1,5 +1,7 @@
 # UnrealGPUPatcher
 
+[**Download here**](https://github.com/Coder-256/UnrealGPUPatcher/releases)
+
 Patch out the GPU checks for any x86-64 macOS Unreal Engine-based game, particularly [ARK: Survival Evolved](https://store.steampowered.com/app/346110/ARK_Survival_Evolved/).
 
 | ![Drag an app to patch](screenshots/screen1.png) | ![Patching...](screenshots/screen2.png) | ![Done!](screenshots/screen3.png) |
