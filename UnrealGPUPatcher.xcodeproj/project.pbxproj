@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		5D0F1FAF285D7A11005460FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		5D0F1FB1285D7BD3005460FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D1975D1285D2B3200DACDAF /* MachOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MachOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE4285D0D7400C2024D /* UnrealGPUPatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnrealGPUPatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrealGPUPatcherApp.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		5D8F3CDB285D0D7400C2024D = {
 			isa = PBXGroup;
 			children = (
+				5D0F1FB1285D7BD3005460FD /* README.md */,
 				5D8F3CE6285D0D7400C2024D /* UnrealGPUPatcher */,
 				5D8F3CE5285D0D7400C2024D /* Products */,
 				5D1975D0285D2B3200DACDAF /* Frameworks */,
