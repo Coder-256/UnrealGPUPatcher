@@ -5,6 +5,16 @@ Patch out the GPU checks for any x86-64 macOS Unreal Engine-based game, particul
 | ![Drag an app to patch](screenshots/screen1.png) | ![Patching...](screenshots/screen2.png) | ![Done!](screenshots/screen3.png) |
 |-|-|-|
 
+## Instructions
+
+1. Download ARK: Survival Evolved on Steam (or any other game using an old version of Unreal Engine built for x86-64 macOS).
+2. Navigate to the app in Finder. If you're using Steam: right-click the game in your library, choose "Manage", then "Browse local files".
+3. Set the desired GPU type. On my 2021 14" MacBook Pro (M1 Pro), I found that Intel worked best.
+4. Drag the app into the patcher and wait for the green checkmark.
+5. Launch the game through Steam; the first launch may take up to an hour, please be patient. If you hear the music but don't see any windows, keep waiting.
+6. Enjoy!
+
+Note: Since this is a patcher, multiplayer mode will not work for games with anti-cheat.
 
 ## Background
 
