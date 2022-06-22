@@ -7,61 +7,31 @@
 
 import Foundation
 import MachOKit
-import UniformTypeIdentifiers
 
-enum GPUType: CaseIterable, Identifiable {
+enum GPUType: String, CaseIterable, Identifiable {
     case intel, nvidia, other, undo
     var id: Self { self }
 }
 
 enum PatchError: Error {
-    case invalidArch, noSymbolTable, cannotFindTargetSymbol, missingSection
+    case invalidArch, noSymbolTable, cannotFindTargetSymbol, missingSection, noBundle, missingExec
 }
 
 func hex(_ n: UInt64) -> String {
     return "0x" + String(format: "%02X", n)
 }
 
-func patch(providers: [NSItemProvider], gpuType: GPUType, callback: @escaping (Bool) -> ()) {
-    providers[0].loadItem(forTypeIdentifier: UTType.url.identifier) { data, error in
-        if let error = error {
-            log("Drop error: \(error)")
-            callback(false)
-            return
-        }
-        guard let data = data as? Data,
-              let url = URL(dataRepresentation: data, relativeTo: nil) else {
-            log("Unable to get URL from drop source")
-            callback(false)
-            return
-        }
-        log("URL: \(url.absoluteString)")
-        guard let bundle = Bundle(url: url) else {
-            log("Unable to get bundle from URL")
-            callback(false)
-            return
-        }
-        guard let execURL = bundle.executableURL else {
-            log("Unable to get executable from bundle")
-            callback(false)
-            return
-        }
-        log("Exec URL: \(execURL.absoluteString)")
-        DispatchQueue.global(qos: .userInitiated).async {
-            log("Starting patch...")
-            do {
-                try patch(url: execURL, gpuType: gpuType)
-                callback(true)
-                return
-            } catch {
-                log("Patching error: \(error)")
-            }
-            callback(false)
-        }
+func patch(url: URL, gpuType: GPUType) throws {
+    guard let bundle = Bundle(url: url) else {
+        log("Unable to get bundle from URL")
+        throw PatchError.noBundle
     }
-}
+    guard let execURL = bundle.executableURL else {
+        log("Unable to get executable from bundle")
+        throw PatchError.missingExec
+    }
+    log("Exec URL: \(execURL.absoluteString)")
 
-func patch(url execURL: URL, gpuType: GPUType) throws {
     // First, back up!
     let backupURL = execURL.appendingPathExtension("bak")
     log("Backup URL: \(backupURL.absoluteString)")

@@ -16,6 +16,11 @@
 		5D8F3CEF285D0D7700C2024D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8F3CEE285D0D7700C2024D /* Preview Assets.xcassets */; };
 		5D8F3CF7285D0DB300C2024D /* Patcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF6285D0DB300C2024D /* Patcher.swift */; };
 		5D8F3CF9285D16FC00C2024D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF8285D16FC00C2024D /* Log.swift */; };
+		5D97744A2862C0AB00511B65 /* PatchCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9774492862C0AB00511B65 /* PatchCLI.swift */; };
+		5D9774502862C0EA00511B65 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 5D97744F2862C0EA00511B65 /* ArgumentParser */; };
+		5D9774512862C11600511B65 /* Patcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F3CF6285D0DB300C2024D /* Patcher.swift */; };
+		5D9774522862C33F00511B65 /* MachOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1975D1285D2B3200DACDAF /* MachOKit.framework */; };
+		5D97745A2862C50600511B65 /* patch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D9774472862C0AB00511B65 /* patch */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +33,16 @@
 				5D1975D3285D2B3200DACDAF /* MachOKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9774592862C4FF00511B65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				5D97745A2862C50600511B65 /* patch in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -44,6 +59,8 @@
 		5D8F3CF0285D0D7700C2024D /* UnrealGPUPatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnrealGPUPatcher.entitlements; sourceTree = "<group>"; };
 		5D8F3CF6285D0DB300C2024D /* Patcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patcher.swift; sourceTree = "<group>"; };
 		5D8F3CF8285D16FC00C2024D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		5D9774472862C0AB00511B65 /* patch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = patch; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9774492862C0AB00511B65 /* PatchCLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchCLI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +69,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1975D2285D2B3200DACDAF /* MachOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9774442862C0AB00511B65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9774522862C33F00511B65 /* MachOKit.framework in Frameworks */,
+				5D9774502862C0EA00511B65 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				5D0F1FB1285D7BD3005460FD /* README.md */,
+				5D8F3CF6285D0DB300C2024D /* Patcher.swift */,
 				5D8F3CE6285D0D7400C2024D /* UnrealGPUPatcher */,
+				5D9774482862C0AB00511B65 /* patch */,
 				5D8F3CE5285D0D7400C2024D /* Products */,
 				5D1975D0285D2B3200DACDAF /* Frameworks */,
 			);
@@ -80,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8F3CE4285D0D7400C2024D /* UnrealGPUPatcher.app */,
+				5D9774472862C0AB00511B65 /* patch */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +119,6 @@
 				5D8F3CE7285D0D7400C2024D /* UnrealGPUPatcherApp.swift */,
 				5D8F3CE9285D0D7400C2024D /* ContentView.swift */,
 				5D8F3CF8285D16FC00C2024D /* Log.swift */,
-				5D8F3CF6285D0DB300C2024D /* Patcher.swift */,
 				5D8F3CEB285D0D7700C2024D /* Assets.xcassets */,
 				5D8F3CF0285D0D7700C2024D /* UnrealGPUPatcher.entitlements */,
 				5D0F1FAF285D7A11005460FD /* Credits.html */,
@@ -107,6 +135,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5D9774482862C0AB00511B65 /* patch */ = {
+			isa = PBXGroup;
+			children = (
+				5D9774492862C0AB00511B65 /* PatchCLI.swift */,
+			);
+			path = patch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,6 +154,7 @@
 				5D8F3CE1285D0D7400C2024D /* Frameworks */,
 				5D8F3CE2285D0D7400C2024D /* Resources */,
 				5D1975D4285D2B3200DACDAF /* Embed Frameworks */,
+				5D9774592862C4FF00511B65 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -127,6 +164,25 @@
 			productName = UnrealGPUPatcher;
 			productReference = 5D8F3CE4285D0D7400C2024D /* UnrealGPUPatcher.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5D9774462862C0AB00511B65 /* patch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D97744B2862C0AB00511B65 /* Build configuration list for PBXNativeTarget "patch" */;
+			buildPhases = (
+				5D9774432862C0AB00511B65 /* Sources */,
+				5D9774442862C0AB00511B65 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = patch;
+			packageProductDependencies = (
+				5D97744F2862C0EA00511B65 /* ArgumentParser */,
+			);
+			productName = patch;
+			productReference = 5D9774472862C0AB00511B65 /* patch */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -141,6 +197,9 @@
 					5D8F3CE3285D0D7400C2024D = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					5D9774462862C0AB00511B65 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5D8F3CDF285D0D7400C2024D /* Build configuration list for PBXProject "UnrealGPUPatcher" */;
@@ -152,11 +211,15 @@
 				Base,
 			);
 			mainGroup = 5D8F3CDB285D0D7400C2024D;
+			packageReferences = (
+				5D97744E2862C0EA00511B65 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 5D8F3CE5285D0D7400C2024D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5D8F3CE3285D0D7400C2024D /* UnrealGPUPatcher */,
+				5D9774462862C0AB00511B65 /* patch */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +246,15 @@
 				5D8F3CE8285D0D7400C2024D /* UnrealGPUPatcherApp.swift in Sources */,
 				5D8F3CF9285D16FC00C2024D /* Log.swift in Sources */,
 				5D8F3CF7285D0DB300C2024D /* Patcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9774432862C0AB00511B65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D97744A2862C0AB00511B65 /* PatchCLI.swift in Sources */,
+				5D9774512862C11600511B65 /* Patcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UnrealGPUPatcher/UnrealGPUPatcher.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -321,6 +394,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.jacobgreenfield.UnrealGPUPatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -335,6 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UnrealGPUPatcher/UnrealGPUPatcher.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -348,10 +423,46 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.jacobgreenfield.UnrealGPUPatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5D97744C2862C0AB00511B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4887UFF4KD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D97744D2862C0AB00511B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4887UFF4KD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -377,7 +488,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5D97744B2862C0AB00511B65 /* Build configuration list for PBXNativeTarget "patch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D97744C2862C0AB00511B65 /* Debug */,
+				5D97744D2862C0AB00511B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D97744E2862C0EA00511B65 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D97744F2862C0EA00511B65 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D97744E2862C0EA00511B65 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D8F3CDC285D0D7400C2024D /* Project object */;
 }
