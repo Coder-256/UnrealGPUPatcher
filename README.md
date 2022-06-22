@@ -13,6 +13,12 @@ Patch out the GPU checks for any x86-64 macOS Unreal Engine-based game, particul
 | ![Drag an app to patch](screenshots/screen1.png) | ![Patching...](screenshots/screen2.png) | ![Done!](screenshots/screen3.png) |
 |-|-|-|
 
+## Requirements
+
+App: macOS 11
+
+CLI: macOS 10.15.4  (located at `UnrealGPUPatcher.app/Contents/MacOS/patch`)
+
 ## Instructions
 
 1. Download ARK: Survival Evolved on Steam (or any other game using an old version of Unreal Engine built for x86-64 macOS).
