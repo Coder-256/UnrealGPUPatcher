@@ -61,6 +61,7 @@
 		5D8F3CF8285D16FC00C2024D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		5D9774472862C0AB00511B65 /* patch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = patch; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9774492862C0AB00511B65 /* PatchCLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchCLI.swift; sourceTree = "<group>"; };
+		5D9774692862D00A00511B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				5D9774492862C0AB00511B65 /* PatchCLI.swift */,
+				5D9774692862D00A00511B65 /* Info.plist */,
 			);
 			path = patch;
 			sourceTree = "<group>";
@@ -383,7 +385,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"UnrealGPUPatcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 4887UFF4KD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -412,7 +414,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"UnrealGPUPatcher/Preview Content\"";
 				DEVELOPMENT_TEAM = 4887UFF4KD;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -436,14 +438,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4887UFF4KD;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(PROJECT_DIR)/patch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,13 +460,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4887UFF4KD;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(PROJECT_DIR)/patch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
